@@ -1,4 +1,5 @@
-<p align="center">  **ReadMe File**
+<p align="center">  
+  ReadMe File
 </p>
 
 
@@ -13,7 +14,9 @@ Matthew Atwell
 
 Katherine Lin
 
-
+<p align="center">  
+  Notes
+</p>
 
 To create the DB and run inserts in one command use 
 
