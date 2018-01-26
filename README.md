@@ -1,22 +1,42 @@
 # Markdown-Testing
-{VegetableID, MaterialID} -> {Name, Seeding, GerminationTemperature, GerminationDays, HarvestingTime, GrowTemperature, HavestingInstruction, Images.ImageID, Description, OptionalMaterial}
+Vegetable (VegetableID, ImageID, Name, Seeding, GerminationTemperature, GerminationDays, HarvestingTime, GrowTemperature, HarvestInstruction)
 
-{VegetableID } -> {Name, Seeding, GerminationTemperature, GerminationDays, HarvestingTime, GrowTemperature, HavestingInstruction, ImageID }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vegetable (ImageID) must exist in Image (ImageID)
 
-{MaterialID} -> {MaterialName, Description, OptionalMaterial}
+Material Per Vegetable (MaterialID, VegetableID)
 
-{SicknessID } -> { Sickness, Symptoms, Solutions }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Material Per Vegetable (MaterialID) must exist in Material (MaterialID)
 
-{SicknessID, VegetableID } -> { Sickness, Symptoms, Solutions, Name, Seeding, GerminationTemperature, GerminationDays, HarvestingTime, GrowTemperature, HavestingInstruction, ImageID }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Material Per Vegetable (VegetableID) must exist in Vegetable (VegetableID)
 
-{ ImageID  } -> { ImageURL, Description }
+Saved Project (ProjectID, BookmarkChapter, ProjectName, ChecklistReminder, ChapterReminder)
 
-{ProjectID } -> {ProjectName, ChecklistReminder, ChapterReminder, BookmarkChapter}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saved Project (BookmarkChapter) must exist in Chapter (ChapterID)
 
-{ ProjectID, VegetableID, PlantedDate } -> { Name, Seeding, GerminationTemperature, GerminationDays, HarvestingTime, GrowTemperature, HavestingInstruction, ImageID, ProjectName, ChecklistReminder, ChapterReminder, LeftOffChapter}
+Sickness Per Vegetable (SicknessID, VegetableID)
 
-{StepID} -> {ChapterID, StepNumber, Content}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sickness Per Vegetable (SicknessID) must exist in Sickness (SicknessID)
 
-{TipID} -> {Name, Description, ChapterID}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sickness Per Vegetable (VegetableID) must exist in Vegetable (VegetableID)
 
-{ChapterID} -> {ChapterNumber, WaitTime, ChapterName}
+Planted Vegetable (ProjectID, VegetableID, PlantedDate)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Planted Vegetable (ProjectID) must exist in Saved Project (ProjectID)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Planted Vegetable (VegetableID) must exist in Vegetable (VegetableID)
+
+Material (MaterialID, MaterialName, Description, OptionalMaterial)
+
+Step (StepID, ChapterID, StepNumber, Content)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Step (ChapterID) must exist in Chapter (ChapterID)
+
+Chapter (ChapterID, ChapterNumber, WaitTime, ChapterName)
+
+Sickness(SicknessID, Sickness, Symptoms, Solutions)
+
+Tip( TipID, ChapterID, Name, Description)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tip(ChapterID) must exists in Chapter (ChapterID)
+
+Image( ImageID, ImageURL, Description )
