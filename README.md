@@ -1,8 +1,9 @@
 <p align="center">
-** ReadMe File **
+**ReadMe File**
 </p>
 
 ** Group Members **
+
 Brianna Jones
 
 Brianna Buttaccio
